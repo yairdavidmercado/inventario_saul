@@ -34,10 +34,21 @@
           font-size: 3.5rem;
         }
       }
+
+      .loader{
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url('/inventario_saul/assets/img/loader.gif') 
+                    50% 50% no-repeat rgb(249,249,249);
+      }
     </style>
   </head>
   <body class="bg-light">
-
+  <div class="loader"></div>
 <main role="main" class="container py-5">
 <div class="row">
   <div class="col-md-12 order-md-1">
@@ -65,11 +76,12 @@
         <thead >
             <tr>
                 <th style="width:10px">Radicado</th>
-                <th style="width:200px">Nombre</th>
-                <th>Remitente</th>
-                <th>id remitente</th>
-                <th style="width:300px">Servicio</th>
-                <th>Fecha</th>
+                <th style="width:300px">Razón</th>
+                <th style="width:300px">Asunto</th>
+                <th style="width:10px">Dias de tramite</th>
+                <th style="width:10px">Fecha</th>
+                <th style="width:10px">Estado</th>
+                <th style="width:10px">Respuesta</th>
             </tr>
         </thead>
         <tbody id="tbodytable">
@@ -77,12 +89,13 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>Radicado</th>
+                <th>Razón</th>
+                <th>Asunto</th>
+                <th>Dias de tramite</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Respuesta</th>
             </tr>
         </tfoot>
     </table>
@@ -99,7 +112,8 @@
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 <script>
 $(function() {
-  $('#example').DataTable();
+  $(".loader").css("display", "none")
+  //$('#example').DataTable();
   $("#radicado").keyup(function(e){ 
     var code = e.which; // recommended to use e.which, it's normalized across browsers
     if(code==13)e.preventDefault();
@@ -137,23 +151,31 @@ function ShowRadicado(tipo) {
     type : 'POST',
     data: values,
     url: 'php/sel_radicado.php',
+    beforeSend: function() {
+        $(".loader").css("display", "inline-block")
+    },
     success: function(respuesta) {
+      $(".loader").css("display", "none")
        let obj = JSON.parse(respuesta)
+       $("#example").dataTable().fnDestroy();
        let fila = ''
        $.each(obj[0], function( index, val ) {
          fila += '<tr>'+
-                      '<td>'+val.id_radi+'</td>'+
-                      '<td>'+val.nombre_usua+'</td>'+
-                      '<td>'+val.nom_remitente+'</td>'+
-                      '<td>'+val.id_remitente+'</td>'+
-                      '<td>'+val.cod_servicio+'</td>'+
-                      '<td>'+val.fecha_radi+'</td>'+
+                      '<td>'+val.conse+'</td>'+
+                      '<td>'+val.razon+'</td>'+
+                      '<td>'+val.asunto+'</td>'+
+                      '<td>'+val.dias_tramite+'</td>'+
+                      '<td>'+val.fecha+'</td>'+
+                      '<td>'+val.leido+'</td>'+
+                      '<td>'+val.respuesta+'</td>'+
                   '</tr>'
       });
       $("#tbodytable").html(fila)
+      $('#example').DataTable();
         //$('#example').DataTable().ajax.reload();
     },
     error: function() {
+      $(".loader").css("display", "")
       console.log("No se ha podido obtener la información");
     }
   });
