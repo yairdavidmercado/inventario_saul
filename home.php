@@ -53,6 +53,7 @@
 <main role="main" class="container py-5">
 <div class="row">
   <div class="col-md-12 order-md-1">
+  <div class="float-right"><img src="assets/img/logos.png" width="300px" alt="" srcset=""></div>
     <h4 class="mb-3">Radicados</h4>
     <form class="needs-validation" novalidate>
       <div class="row">
