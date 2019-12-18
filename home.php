@@ -12,7 +12,8 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/offcanvas/">
 
     <!-- Bootstrap core CSS -->
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 
@@ -76,12 +77,13 @@
         <thead >
             <tr>
                 <th style="width:10px">Radicado</th>
-                <th style="width:300px">Razón</th>
+                <th style="width:300px">Nombre</th>
                 <th style="width:300px">Asunto</th>
-                <th style="width:10px">Dias de tramite</th>
+                <!-- <th style="width:10px">Dias de tramite</th> -->
                 <th style="width:10px">Fecha</th>
-                <th style="width:10px">Estado</th>
+                <th style="width:10px">Tramite</th>
                 <th style="width:10px">Respuesta</th>
+                <th style="width:10px"></th>
             </tr>
         </thead>
         <tbody id="tbodytable">
@@ -89,13 +91,14 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Radicado</th>
-                <th>Razón</th>
-                <th>Asunto</th>
-                <th>Dias de tramite</th>
-                <th>Fecha</th>
-                <th>Estado</th>
-                <th>Respuesta</th>
+                <th style="width:10px">Radicado</th>
+                <th style="width:300px">Nombre</th>
+                <th style="width:300px">Asunto</th>
+                <!-- <th style="width:10px">Dias de tramite</th> -->
+                <th style="width:10px">Fecha</th>
+                <th style="width:10px">Tramite</th>
+                <th style="width:10px">Respuesta</th>
+                <th style="width:10px"></th>
             </tr>
         </tfoot>
     </table>
@@ -104,9 +107,9 @@
   </div>
 </div>
 </main>
-<script src="assets/js/jquery.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="assets/js/jquery.slim.min.js" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="assets/js/jquery.slim.min.js"><\/script>')</script>
-<script src="assets/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+<script src="assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
@@ -161,13 +164,14 @@ function ShowRadicado(tipo) {
        let fila = ''
        $.each(obj[0], function( index, val ) {
          fila += '<tr>'+
-                      '<td>'+val.conse+'</td>'+
+                      '<td>'+val.id_radi+'</td>'+
                       '<td>'+val.razon+'</td>'+
                       '<td>'+val.asunto+'</td>'+
-                      '<td>'+val.dias_tramite+'</td>'+
+                      // '<td>'+val.dias_tramite+'</td>'+
                       '<td>'+val.fecha+'</td>'+
                       '<td>'+val.leido+'</td>'+
                       '<td>'+val.respuesta+'</td>'+
+                      '<td><a class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
                   '</tr>'
       });
       $("#tbodytable").html(fila)
