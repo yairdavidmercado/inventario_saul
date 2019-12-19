@@ -159,8 +159,8 @@ function ShowRadicado() {
                       '<td>'+val.fecha+'</td>'+
                       '<td>'+val.leido+'</td>'+
                       '<td>'+val.respuesta+'</td>'+
-                      '<td><a class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
-                      '<td><a class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
+                      '<td><a href="file:///C:/Users/Administrator/Documents/NetBeansProjects/SGD/web/'+val.ruta_radi+'" class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
+                      '<td><a href="file:///C:/Users/Administrator/Documents/NetBeansProjects/SGD/web/'+val.ruta_respuesta+'" class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
                   '</tr>'
       });
       $("#tbodytable").html(fila)
