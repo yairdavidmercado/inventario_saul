@@ -77,17 +77,18 @@
       </div>
     </form>
     <div class="table-responsive-sm" >
-    <table id="example" class="table table-striped table-bordered" >
+    <table id="example" style="font-size:11px" class="table table-striped table-bordered" >
         <thead >
             <tr>
                 <th style="width:10px">Radicado</th>
                 <th style="width:300px">Nombre</th>
                 <th style="width:300px">Asunto</th>
                 <!-- <th style="width:10px">Dias de tramite</th> -->
-                <th style="width:10px">Fecha</th>
+                <th style="width:150px">Fecha</th>
                 <th style="width:10px">Tramite</th>
                 <th style="width:10px">Respuesta</th>
-                <th style="width:10px"></th>
+                <th style="width:10px">Descargar radicado</th>
+                <th style="width:10px">Descargar respuesta</th>
             </tr>
         </thead>
         <tbody id="tbodytable">
@@ -158,6 +159,7 @@ function ShowRadicado() {
                       '<td>'+val.fecha+'</td>'+
                       '<td>'+val.leido+'</td>'+
                       '<td>'+val.respuesta+'</td>'+
+                      '<td><a class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
                       '<td><a class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
                   '</tr>'
       });
