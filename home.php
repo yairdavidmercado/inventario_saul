@@ -55,7 +55,7 @@
   <div class="col-md-12 order-md-1">
   <div class="float-right"><img src="assets/img/logos.png" width="300px" alt="" srcset=""></div>
     <h4 class="mb-3">Consulta su respuesta de radicado</h4>
-    <form class="needs-validation" novalidate>
+    <form role="form" onsubmit="event.preventDefault(); return ShowRadicado(1);" class="needs-validation">
       <div class="row">
         <div class="col-md-3 mb-3">
           <label for="firstName">Número de radicado</label>
@@ -65,11 +65,14 @@
           </div>
         </div>
         <div class="col-md-3 mb-3">
-          <label for="lastName">Identificación</label>
-          <input type="text" placeholder="Presione ENTER para buscar" class="form-control" id="identificacion" placeholder="" value="" required>
+          <label for="lastName">Código de verificación</label>
+          <input type="text" placeholder="Presione ENTER para buscar" class="form-control" id="cv" placeholder="" value="" required>
           <div class="invalid-feedback">
             Valid last name is required.
           </div>
+        </div>
+        <div class="col-md-3" style="margin-top: 31px;">
+            <button class="btn btn-success" type="submit">Consultar</button>
         </div>
       </div>
     </form>
@@ -118,39 +121,32 @@
 $(function() {
   $(".loader").css("display", "none")
   //$('#example').DataTable();
-  $("#radicado").keyup(function(e){ 
-    var code = e.which; // recommended to use e.which, it's normalized across browsers
-    if(code==13)e.preventDefault();
-    if(code==32||code==13||code==188||code==186){
-      ShowRadicado("1")
-      //$('#example').DataTable().ajax.reload();
-      //alert('Has presionado enter en el campo de número de radicado')
-    } // missing closing if brace
-  });
+  // $("#radicado").keyup(function(e){ 
+  //   var code = e.which; // recommended to use e.which, it's normalized across browsers
+  //   if(code==13)e.preventDefault();
+  //   if(code==32||code==13||code==188||code==186){
+  //     ShowRadicado("1")
+  //     //$('#example').DataTable().ajax.reload();
+  //     //alert('Has presionado enter en el campo de número de radicado')
+  //   } // missing closing if brace
+  // });
 
-  $("#identificacion").keyup(function(e){ 
-    var code = e.which; // recommended to use e.which, it's normalized across browsers
-    if(code==13)e.preventDefault();
-    if(code==32||code==13||code==188||code==186){
-      ShowRadicado("2")
-        //alert('Has presionado enter en el campo de identificacion')
-    } // missing closing if brace
-  });
+  // $("#cv").keyup(function(e){ 
+  //   var code = e.which; // recommended to use e.which, it's normalized across browsers
+  //   if(code==13)e.preventDefault();
+  //   if(code==32||code==13||code==188||code==186){
+  //     ShowRadicado("2")
+  //       //alert('Has presionado enter en el campo de cv')
+  //   } // missing closing if brace
+  // });
 });
 
 function ShowRadicado(tipo) {
-  var values = []
-    if (tipo == "1") {
-      values = { 
+    let values = { 
           cod: tipo,
-          id: $('#radicado').val()
-      }; 
-    }else if(tipo == "2"){
-      values = { 
-          cod: tipo,
-          id: $('#identificacion').val()
-      }; 
-    }
+          radi: $('#radicado').val(),
+          id: $('#cv').val()
+    };
     $.ajax({
     type : 'POST',
     data: values,
