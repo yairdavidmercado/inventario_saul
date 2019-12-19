@@ -55,7 +55,7 @@
   <div class="col-md-12 order-md-1">
   <div class="float-right"><img src="assets/img/logos.png" width="300px" alt="" srcset=""></div>
     <h4 class="mb-3">Consulta su respuesta de radicado</h4>
-    <form role="form" onsubmit="event.preventDefault(); return ShowRadicado(1);" class="needs-validation">
+    <form role="form" onsubmit="event.preventDefault(); return ShowRadicado();" class="needs-validation">
       <div class="row">
         <div class="col-md-3 mb-3">
           <label for="firstName">Número de radicado</label>
@@ -120,16 +120,6 @@
 <script>
 $(function() {
   $(".loader").css("display", "none")
-  //$('#example').DataTable();
-  // $("#radicado").keyup(function(e){ 
-  //   var code = e.which; // recommended to use e.which, it's normalized across browsers
-  //   if(code==13)e.preventDefault();
-  //   if(code==32||code==13||code==188||code==186){
-  //     ShowRadicado("1")
-  //     //$('#example').DataTable().ajax.reload();
-  //     //alert('Has presionado enter en el campo de número de radicado')
-  //   } // missing closing if brace
-  // });
 
   // $("#cv").keyup(function(e){ 
   //   var code = e.which; // recommended to use e.which, it's normalized across browsers
@@ -141,9 +131,9 @@ $(function() {
   // });
 });
 
-function ShowRadicado(tipo) {
+function ShowRadicado() {
     let values = { 
-          cod: tipo,
+          cod: '1',
           radi: $('#radicado').val(),
           id: $('#cv').val()
     };
