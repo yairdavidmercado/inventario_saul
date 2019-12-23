@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/offcanvas/">
 
     <!-- Bootstrap core CSS -->
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link href="/gestion_documental/assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
@@ -43,7 +43,7 @@
         width: 100%;
         height: 100%;
         z-index: 9999;
-        background: url('/inventario_saul/assets/img/loader.gif') 
+        background: url('/gestion_documental/assets/img/loader.gif') 
                     50% 50% no-repeat rgb(249,249,249);
       }
     </style>
@@ -112,9 +112,9 @@
   </div>
 </div>
 </main>
-<script src="assets/js/jquery.slim.min.js" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="assets/js/jquery.slim.min.js"><\/script>')</script>
-<script src="assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="/gestion_documental/assets/js/jquery.slim.min.js" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="/gestion_documental/assets/js/jquery.slim.min.js"><\/script>')</script>
+<script src="/gestion_documental/assets/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>

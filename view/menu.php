@@ -2,7 +2,7 @@
 // start a session
 session_start();
  if (!isset($_SESSION['idUser'])) {
-    header ("Location:/inventario/index.php"); 
+    header ("Location:/gestion_documental/index.php"); 
  }
 // manipulate session variables
 ?>
@@ -54,7 +54,7 @@ session_start();
         </div>
     </div>
   </nav>
-  <script src="/inventario/assets/js/jquery.slim.min.js" crossorigin="anonymous"></script>
+  <script src="/gestion_documental/assets/js/jquery.slim.min.js" crossorigin="anonymous"></script>
   <script>
   $(function() {
         console.log( "ready!" );
