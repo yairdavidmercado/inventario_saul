@@ -159,7 +159,7 @@ function ShowRadicado() {
                       '<td>'+val.fecha+'</td>'+
                       '<td>'+val.leido+'</td>'+
                       '<td>'+val.respuesta+'</td>'+
-                      '<td><input type="file"><a href="ftp://10.10.10.34/imagenes/Ideas.png" class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
+                      '<td><input style="display:none" id="subir_radicado" type="file"><a onclick="subir_radicado()" class="btn btn-sm btn-primary" style="color:#fff"><i class="fa fa-upload"></i></a></td>'+
                     //   '<td><a href="ftp://10.10.10.34/imagenes/Censo.png" class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
                   '</tr>'
       });
@@ -173,6 +173,10 @@ function ShowRadicado() {
     }
   });
     
+  }
+
+  function subir_radicado() {
+    $("#subir_radicado").click()
   }
 </script>
 </body>
