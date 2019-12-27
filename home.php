@@ -159,7 +159,7 @@ function ShowRadicado() {
                       '<td>'+val.fecha+'</td>'+
                       '<td>'+val.leido+'</td>'+
                       '<td>'+val.respuesta+'</td>'+
-                      '<td><a href="ftp://190.121.135.236/imagenes/Ideas.png" class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
+                      '<td><a href="ftp://190.121.135.236/'+val.ruta_radi+'" class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
                       '<td><a href="ftp://190.121.135.236/imagenes/Censo.png" class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
                   '</tr>'
       });
