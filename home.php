@@ -152,7 +152,7 @@ function ShowRadicado() {
        let fila = ''
        let btn_respuesta = '';
        $.each(obj[0], function( index, val ) {
-         if (btn_respuesta !== 'Sin Respuesta') {
+         if (val.respuesta !== 'Sin Respuesta') {
           btn_respuesta = '<a href="ftp://190.121.135.236/'+val.ruta_respuesta+'" class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a>'
          }
          fila += '<tr>'+
