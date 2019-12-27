@@ -150,7 +150,11 @@ function ShowRadicado() {
        let obj = JSON.parse(respuesta)
        $("#example").dataTable().fnDestroy();
        let fila = ''
+       let btn_respuesta = '';
        $.each(obj[0], function( index, val ) {
+         if (btn_respuesta !== 'Sin Respuesta') {
+          btn_respuesta = '<a href="ftp://190.121.135.236/'+val.ruta_respuesta+'" class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a>'
+         }
          fila += '<tr>'+
                       '<td>'+val.id_radi+'</td>'+
                       '<td>'+val.razon+'</td>'+
@@ -160,7 +164,7 @@ function ShowRadicado() {
                       '<td>'+val.leido+'</td>'+
                       '<td>'+val.respuesta+'</td>'+
                       '<td><a href="ftp://190.121.135.236/'+val.ruta_radi+'" class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
-                      '<td><a href="ftp://190.121.135.236/imagenes/Censo.png" class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
+                      '<td>'+btn_respuesta+'</td>'+
                   '</tr>'
       });
       $("#tbodytable").html(fila)
