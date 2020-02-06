@@ -54,7 +54,7 @@
 <div class="row">
   <div class="col-md-12 order-md-1">
   <div class="float-right"><img src="assets/img/logos.png" width="300px" alt="" srcset=""></div>
-    <h4 class="mb-3">Consulta su respuesta de radicado</h4>
+    <h4 class="mb-3">Radicar respuesta</h4>
     <form role="form" onsubmit="event.preventDefault(); return ShowRadicado();" class="needs-validation">
       <div class="row">
         <div class="col-md-3 mb-3">
