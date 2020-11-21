@@ -1,4 +1,4 @@
-
+﻿
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,7 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Offcanvas template · Bootstrap</title>
+    <link rel="icon" type="image/ico" href="/gestion_documental/assets/img/ideas.ico">
+    <title>Subir respuesta de radicado recibido</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/offcanvas/">
 
@@ -54,7 +55,7 @@
 <div class="row">
   <div class="col-md-12 order-md-1">
   <div class="float-right"><img src="/gestion_documental/assets/img/logos.png" width="300px" alt="" srcset=""></div>
-    <h4 class="mb-3">Consulta su respuesta de radicado</h4>
+    <h4 class="mb-3">Subir respuesta de radicado recibido</h4>
     <form role="form" onsubmit="event.preventDefault(); return ShowRadicado();" class="needs-validation">
       <div class="row">
         <div class="col-md-3 mb-3">
@@ -85,8 +86,8 @@
                 <th style="width:300px">Asunto</th>
                 <!-- <th style="width:10px">Dias de tramite</th> -->
                 <th style="width:150px">Fecha</th>
-                <th style="width:10px">Tramite</th>
-                <th style="width:10px">Respuesta</th>
+                <th style="width:10px">Estado</th>
+                <th style="width:10px">Estado de respuesta</th>
                 <th style="width:10px">Subir radicado</th>
                 <!-- <th style="width:10px">Descargar respuesta</th> -->
             </tr>
@@ -134,7 +135,7 @@ $(function() {
 
 function ShowRadicado() {
     let values = { 
-          cod: '1',
+          cod: '2',
           radi: $('#radicado').val(),
           id: $('#cv').val()
     };

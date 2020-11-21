@@ -1,4 +1,4 @@
-
+﻿
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Offcanvas template · Bootstrap</title>
+    <title>Consultar radicados</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/offcanvas/">
 
@@ -54,7 +54,7 @@
 <div class="row">
   <div class="col-md-12 order-md-1">
   <div class="float-right"><img src="assets/img/logos.png" width="300px" alt="" srcset=""></div>
-    <h4 class="mb-3">Consulta su respuesta de radicado</h4>
+    <h4 class="mb-3">Consultar radicados</h4>
     <form role="form" onsubmit="event.preventDefault(); return ShowRadicado();" class="needs-validation">
       <div class="row">
         <div class="col-md-3 mb-3">
@@ -85,10 +85,11 @@
                 <th style="width:300px">Asunto</th>
                 <!-- <th style="width:10px">Dias de tramite</th> -->
                 <th style="width:150px">Fecha</th>
-                <th style="width:10px">Tramite</th>
-                <th style="width:10px">Respuesta</th>
+                <th style="width:10px">Estado</th>
+                <th style="width:10px">Estado de respuesta</th>
                 <th style="width:10px">Descargar radicado</th>
                 <th style="width:10px">Descargar respuesta</th>
+		            <th style="width:10px">Respuesta</th>
             </tr>
         </thead>
         <tbody id="tbodytable">
@@ -101,8 +102,10 @@
                 <th style="width:300px">Asunto</th>
                 <!-- <th style="width:10px">Dias de tramite</th> -->
                 <th style="width:10px">Fecha</th>
-                <th style="width:10px">Tramite</th>
-                <th style="width:10px">Respuesta</th>
+                <th style="width:10px">Estado</th>
+                <th style="width:10px">Estado de respuesta</th>
+                <th style="width:10px"></th>
+		            <th style="width:10px"></th>
                 <th style="width:10px"></th>
             </tr>
         </tfoot>
@@ -165,6 +168,7 @@ function ShowRadicado() {
                       '<td>'+val.respuesta+'</td>'+
                       '<td><a href="ftp://190.121.135.236/'+val.ruta_radi+'" class="btn btn-sm btn-danger" style="color:#fff"><i class="fa fa-file-pdf-o"></i></a></td>'+
                       '<td>'+btn_respuesta+'</td>'+
+		      '<td>'+val.obser_resp+'</td>'+
                   '</tr>'
       });
       $("#tbodytable").html(fila)

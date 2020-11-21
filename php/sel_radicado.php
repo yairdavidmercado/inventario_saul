@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'conexion.php';
 $conn = new PDO("pgsql:host=".DB_HOST.";port=".DB_PORT.";dbname=".DB_NAME, DB_USER, DB_PASS);
 $cod = $_POST["cod"];
